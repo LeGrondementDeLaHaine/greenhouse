@@ -9,10 +9,8 @@
     <script src="https://www.unpkg.com/@eohjsc/era-widget@1.0.14/src/index.js">
         checkbox.addEventListener('change', () => {
     if (checkbox.checked) {
-         fanstate = 1;
          input.checked = true;
     } else {
-        fanstate = 0;
         input.checked = false;
     }
 });  
@@ -28,7 +26,6 @@
         })
         eraWidget.onValues((values) => {
           const input = document.getElementById('A1');
-          fanstate = values[config.id].value;
           input.checked  = values[config.id].value;
         });
         eraWidget.ready()
