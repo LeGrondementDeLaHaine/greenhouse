@@ -1,41 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
-    <title>Working Fan CSS</title>
+    <title>Fan GreenHouse</title>
     <!--Stylesheet-->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <script src="https://www.unpkg.com/@eohjsc/era-widget@1.0.14/src/index.js">
-        checkbox.addEventListener('change', () => {
+        checkbox.addEventListener('change', function() {
     if (checkbox.checked) {
-         input.checked = true;
+        input.checked = true;
     } else {
         input.checked = false;
     }
-});  
-    </script>
-    <div class="fan">
-       <input type="checkbox" id="A1">
-       <script>
-        const eraWidget = new EraWidget();
+}); 
+ </script>
+   <div class="fan">
+       <input type="checkbox" id="B1">
+        <script> 
+            const eraWidget = new EraWidget();
         let config = null;
         let fanstate = 0;
         eraWidget.onConfiguration((configuration) => {
           config = configuration.realtime_configs[0];
         })
         eraWidget.onValues((values) => {
-          const input = document.getElementById('A1');
+          const input = document.getElementById('B1');
           input.checked  = values[config.id].value;
+          var checkbox = document.getElementById('B1');
         });
         eraWidget.ready()
-      </script>
-       <label for="A1">
+            </script>
+       
+<label for="btn">
            <span></span>
            <span></span>
            <span></span>
        </label>
        <div class="base"></div>
    </div>
-  </body>
+</body>
 </html>
