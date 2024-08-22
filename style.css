@@ -15,11 +15,11 @@
     left: 0;
     right: 0;
 }
-label {
+label{
     display: block;
     height: 20px;
     width: 20px;
-    background-color: black;
+    background-color: rgb(0, 255, 0);
     position: absolute;
     margin: 120px auto 0 auto;
     left: 0;
@@ -28,6 +28,7 @@ label {
     animation: spin 1s infinite linear;
     animation-play-state: paused;
 }
+
 @keyframes spin{
     100%{
         transform: rotate(360deg);
@@ -45,6 +46,7 @@ label:after{
     left: -25px;
     bottom: -25px; 
 }
+
 label span{
     display: block;
     height: 120px;
@@ -54,16 +56,16 @@ label span{
     position: absolute;
     z-index: -1;
 }
-span:nth-child(1){
+    span:nth-child(1){
     bottom: 10px;
     left: 10px;
 }
-span:nth-child(2){
+    span:nth-child(2){
     transform: rotate(-120deg);
     left: -95px;
     top: -50px;
 }
-span:nth-child(3){
+    span:nth-child(3){
     transform: rotate(-240deg);
     right: -60px;
     top: 10px;
@@ -71,7 +73,7 @@ span:nth-child(3){
 .base{
     height: 160px;
     width: 20px;
-    background-color: #00317e;
+    background-color: #db1e1e;
     position: absolute;
     margin: auto;
     left: 0;
@@ -89,6 +91,7 @@ span:nth-child(3){
     top: 160px;
     border-radius: 20px 20px 0 0;
 }
+
 input[type="checkbox"]{
     position: absolute;
     -webkit-appearance: none;
@@ -103,9 +106,13 @@ input[type="checkbox"]{
     cursor: pointer;
     border-radius: 5px 5px 0 0;
 }
+
+input[type="checkbox"]:checked + label[for="B1"] {
+    animation-play-state: running;
+}
+input[type="checkbox"] {
+    transition: height 0.3s ease; 
+}
 input[type="checkbox"]:checked{
     height: 8px;
-}
-input[type="checkbox"]:checked + label{
-    animation-play-state: running;
 }
