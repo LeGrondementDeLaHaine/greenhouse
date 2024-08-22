@@ -6,8 +6,33 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-   <div class="fan">
+    <script src="https://www.unpkg.com/@eohjsc/era-widget@1.0.14/src/index.js">
+        checkbox.addEventListener('change', () => {
+    if (checkbox.checked) {
+         fanstate = 1;
+         input.checked = true;
+    } else {
+        fanstate = 0;
+        input.checked = false;
+    }
+});  
+    </script>
+    <div class="fan">
        <input type="checkbox" id="A1">
+       <script>
+        const eraWidget = new EraWidget();
+        let config = null;
+        let fanstate = 0;
+        eraWidget.onConfiguration((configuration) => {
+          config = configuration.realtime_configs[0];
+        })
+        eraWidget.onValues((values) => {
+          const input = document.getElementById('A1');
+          fanstate = values[config.id].value;
+          input.checked  = values[config.id].value;
+        });
+        eraWidget.ready()
+      </script>
        <label for="A1">
            <span></span>
            <span></span>
@@ -15,19 +40,5 @@
        </label>
        <div class="base"></div>
    </div>
-
-<script>
-  const eraWidget = new EraWidget();
-  let config = null;
-  eraWidget.onConfiguration((configuration) => {
-    config = configuration.realtime_configs[0];
-  })
-  eraWidget.onValues((values) => {
-    const input = document.getElementById('A1');
-    input.checked = values[config.id].value;
-  });
-  eraWidget.ready()
-</script>
-
-</body>
+  </body>
 </html>
