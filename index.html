@@ -7,13 +7,27 @@
 </head>
 <body>
    <div class="fan">
-       <input type="checkbox" id="btn">
-       <label for="btn">
+       <input type="checkbox" id="A1">
+       <label for="A1">
            <span></span>
            <span></span>
            <span></span>
        </label>
        <div class="base"></div>
    </div>
+
+<script>
+  const eraWidget = new EraWidget();
+  let config = null;
+  eraWidget.onConfiguration((configuration) => {
+    config = configuration.realtime_configs[0];
+  })
+  eraWidget.onValues((values) => {
+    const input = document.getElementById('A1');
+    input.checked = values[config.id].value;
+  });
+  eraWidget.ready()
+</script>
+
 </body>
 </html>
