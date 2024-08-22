@@ -29,30 +29,12 @@ label{
     animation-play-state: paused;
 }
 
-/* label{
-    display: block;
-    height: 20px;
-    width: 20px;
-    background-color: rgb(30, 255, 0);
-    position: absolute;
-    margin: 120px auto 0 auto;
-    left: 0;
-    right: 0;
-    border-radius: 50% ;
-    animation: spinback 1s infinite linear ; 
-    animation-play-state: paused;
-} */
 
 @keyframes spin{
     100%{
         transform: rotate(360deg);
     }    
 }
-/* @keyframes spinback {
-    100%{
-        transform: rotate(-360deg);
-    }
-} */
 
 label:after{
     content: "";
@@ -124,10 +106,9 @@ input[type="checkbox"]{
     cursor: pointer;
     border-radius: 5px 5px 0 0;
 }
-/* input[type="checkbox"]:checked{
+ input[type="checkbox"]:checked{
     height: 8px;
-} */
+} 
 input[type="checkbox"]:checked + label{
-    height: 8px;
     animation-play-state: running;
 }
