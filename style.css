@@ -127,6 +127,7 @@ input[type="checkbox"]{
 /* input[type="checkbox"]:checked{
     height: 8px;
 } */
-input[type="checkbox"]:checked{
+input[type="checkbox"]:checked + label{
+    height: 8px;
     animation-play-state: running;
 }
