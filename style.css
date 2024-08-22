@@ -124,9 +124,9 @@ input[type="checkbox"]{
     cursor: pointer;
     border-radius: 5px 5px 0 0;
 }
-input[type="checkbox"]:checked{
+/* input[type="checkbox"]:checked{
     height: 8px;
-}
+} */
 input[type="checkbox"]:checked + label{
     animation-play-state: running;
 }
